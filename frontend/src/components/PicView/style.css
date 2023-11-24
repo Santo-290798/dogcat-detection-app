@@ -1,0 +1,71 @@
+.sampleImg:hover {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.upload-btn,
+.detect-btn {
+    height: 50px;
+    width: 130px;
+    font-weight: 600 !important;
+}
+
+.upload-btn {
+    background-color: white !important;
+    border: 1px solid #91b23d !important;
+    color: #93b33d !important;
+}
+
+.upload-btn:hover {
+    background-color: #efefef !important;
+}
+
+.detect-btn {
+    background: linear-gradient(180deg, rgb(156, 188, 61) 0%, rgb(118, 152, 61) 100%) !important;
+    border-color: #91b23d !important;
+}
+
+.detect-btn:hover {
+    background: linear-gradient(180deg, rgb(135, 164, 47) 0%, rgb(91, 120, 42) 100%) !important;
+}
+
+.loading {
+    background-color: rgba(255, 255, 255, 0.9);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.loading .spinner {
+    border: 8px solid #f3f3f3;
+    /* Light grey */
+    border-top: 8px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading p {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
