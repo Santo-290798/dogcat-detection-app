@@ -29,15 +29,14 @@ export default function DescriptionPage() {
                     <p className="app-description">
                         Our <span className="green-color fw-bold">Dog&Cat </span>Detection web application leverages cutting-edge
                         YOLOv8 technology to provide you with a seamless and powerful object
-                        detection experience. Here"s a step-by-step guide on how the magic
+                        detection experience. Here's a step-by-step guide on how the magic
                         happens:
                     </p>
 
                     <ol className="app-description">
                         <li>
-                            <strong>Upload Your Image:</strong> Begin by uploading an image
-                            containing dogs and cats that you want to detect. You can easily
-                            do this by clicking the "Upload" button and selecting the image
+                            <strong>Upload Your Image:</strong> Begin by uploading an image, and our application will attempt to detect and identify any dogs and cats present in the image. You can easily
+                            do this by clicking the 'Upload' button and selecting the image
                             from your device.
                         </li>
                         <li>
@@ -48,10 +47,7 @@ export default function DescriptionPage() {
                             scenarios.
                         </li>
                         <li>
-                            <strong>Efficient Detection Process:</strong> Once you have chosen the image, our application processes it through the YOLOv8 model.
-                            This model is trained to recognize the unique features of dogs and
-                            cats, allowing it to detect and identify them in the image
-                            efficiently.
+                            <strong>Efficient Detection Process:</strong> After selecting your image, our application gears up to unveil the magic through the YOLOv8 model. But hold on, we've added a touch of suspense! The real show begins when you hit that 'Detect' button. Get ready for an exciting reveal as the detection process kicks in, showcasing the incredible capabilities of our technology.
                         </li>
                         <li>
                             <strong>Visualize Results:</strong> The detected dogs and cats are
