@@ -54,6 +54,12 @@
     animation: spin 2s linear infinite;
 }
 
+.loading p {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;    
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -64,8 +70,20 @@
     }
 }
 
-.loading p {
-    margin-top: 20px;
-    font-size: 20px;
-    text-align: center;
+@media screen and (max-width: 426px) {
+    .app-description.fs-6 {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .app-description.fs-6 {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .app-description.fs-6 {
+        font-size: 10px !important;
+    }
 }

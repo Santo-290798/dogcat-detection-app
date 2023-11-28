@@ -1,3 +1,57 @@
+/* Default primary font color and font size for this app */
 .green-color {
     color: #8FAF3D;
+}
+
+.app-title {
+    font-size: 72px;
+}
+
+.app-description {
+    font-size: 20px;
+    color: #77787F;
+}
+
+/* Adjust font sizes for devices with a screen width of (426px - 1) or less */
+@media screen and (max-width: 426px) {
+    .app-title {
+        font-size: 60px;
+    }
+    
+    .app-description {
+        font-size: 18px;
+    }
+}
+
+/* Adjust font sizes for devices with a screen width of (376px - 1) or less */
+@media screen and (max-width: 376px) {
+    .app-title {
+        font-size: 56px;
+    }
+
+    .app-description {
+        font-size: 16px;
+    }
+}
+
+/* Adjust font sizes for devices with a screen width of (321px - 1) or less */
+@media screen and (max-width: 321px) {
+    .app-title {
+        font-size: 52px;
+    }
+
+    .app-description {
+        font-size: 14px;
+    }
+}
+
+/* Adjust font sizes for devices with a screen width of 1537px or more */
+@media screen and (min-width: 1537px) {
+    .app-title {
+        font-size: 80px;
+    }
+
+    .app-description {
+        font-size: 24px;
+    }
 }

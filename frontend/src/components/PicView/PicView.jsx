@@ -147,7 +147,7 @@ export default function PicView({ drawImageBoxes }) {
                 </Col>
             </Row>
             <Row className="justify-content-center my-4">
-                <Col md={6} lg={5} xxl={4} className="text-center">
+                <Col xs={9} md={6} lg={5} xxl={4} className="text-center">
                     <p className="app-description fs-6">No picture on hand? Try with one of these</p>
                     <Row>
                         <Col xs={3} className="px-1">
