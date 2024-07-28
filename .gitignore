@@ -1,0 +1,11 @@
+# All of app
+*ai.md
+*sample.md
+
+# Backend part
+__pycache__
+*.pt
+.*env
+
+# Frontend part
+frontend/README.md
