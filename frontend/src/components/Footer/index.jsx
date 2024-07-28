@@ -10,7 +10,7 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col>
-                        <p>&copy; 2023 Dog&Cat Detection</p>
+                        <p>&copy; 2024 Dog&Cat Detection</p>
                         <p>Created by Tin Doan</p>
                     </Col>
                 </Row>

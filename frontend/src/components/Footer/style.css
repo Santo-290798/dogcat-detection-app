@@ -1,3 +1,21 @@
 .footer {
     background-color: #E5FFD0;
 }
+
+@media screen and (max-width: 426px) {
+    .footer p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .footer p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .footer p {
+        font-size: 11px;
+    }
+}
