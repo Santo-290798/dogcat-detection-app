@@ -57,11 +57,7 @@ export default function DescriptionPage() {
                             you to see the accuracy of the detection.
                         </li>
                         <li>
-                            <strong>Enjoy the Experience:</strong> Sit back, relax, and enjoy
-                            the experience of discovering the world of object detection.
-                            Whether you're a pet owner curious about the technology or simply
-                            want to have some fun, our application provides an intuitive and
-                            enjoyable way to interact with image recognition technology.
+                            <strong>Download Detected Images:</strong> Easily download the processed image with detected objects highlighted for your convenience.
                         </li>
                     </ol>
 
