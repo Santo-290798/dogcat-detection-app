@@ -17,3 +17,7 @@
     padding-right: 150px;
     font-weight: 500;
 }
+
+.menu-item a, .nav-item a {
+    -webkit-user-drag: none;
+}

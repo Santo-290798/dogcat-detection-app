@@ -1,4 +1,22 @@
-const drawImage = (context, img, canvasWidth, canvasHeight) => {
+export default function drawImageBoxes(context, src, detectedResults, drawFullImage, handleCanvasDrawnCallback) {
+    const img = new Image();
+    img.onload = function () {
+        const { scale, centerShiftX, centerShiftY } = drawImage(context, img, drawFullImage);
+        drawBoxes(context, detectedResults, scale, centerShiftX, centerShiftY);
+
+        if (handleCanvasDrawnCallback) handleCanvasDrawnCallback();
+    }
+    img.src = src;
+};
+
+const drawImage = (context, img, drawFullImage = false) => {
+    if (drawFullImage) {
+        context.canvas.width = img.width;
+        context.canvas.height = img.height;
+    }
+
+    const [canvasWidth, canvasHeight] = [context.canvas.width, context.canvas.height];
+
     // Clear the canvas
     context.clearRect(0, 0, canvasWidth, canvasHeight);
 
@@ -23,10 +41,10 @@ const drawImage = (context, img, canvasWidth, canvasHeight) => {
     return { scale, centerShiftX, centerShiftY };
 };
 
-const drawBoxes = (context, bndboxList, scale, centerShiftX, centerShiftY) => {
-    bndboxList.forEach((bndbox) => {
-        let { xmin, ymin, xmax, ymax } = bndbox.box;
-        const color = bndbox.class_name === 'dog' ? 'rgb(25, 135, 84)' : 'rgb(220, 53, 69)';
+const drawBoxes = (context, detectedResults, scale, centerShiftX, centerShiftY) => {
+    detectedResults.forEach((result) => {
+        let { xmin, ymin, xmax, ymax } = result.box;
+        const color = result.class === 1 ? "rgb(25, 135, 84)" : "rgb(220, 53, 69)";
 
         // Scale and shift box coordinates
         xmin = xmin * scale + centerShiftX;
@@ -47,15 +65,15 @@ const drawBoxes = (context, bndboxList, scale, centerShiftX, centerShiftY) => {
         // Draw background of class name text
         context.fillStyle = color;
 
-        const width = bndbox.class_name === 'dog' ? 30 : 25; // width of text
+        const width = result.class === 1 ? 30 : 25; // width of text
         context.fillRect(xmin, ymin, width, 15);
 
         context.stroke(); // to actually draw the bounding boxes
 
         // Draw a class name text
-        context.font = '15px serif'
-        context.fillStyle = '#ffffff'
-        context.fillText(bndbox.class_name, xmin, ymin + 12)
+        context.font = "15px serif"
+        context.fillStyle = "#ffffff"
+        context.fillText(result.class_name, xmin, ymin + 12)
     });
 };
 

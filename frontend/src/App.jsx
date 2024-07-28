@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MyNavbar from './components/Navbar';
-import Main from './components/Main';
+import HomePage from './components/HomePage';
 import DescriptionPage from './components/DescriptionPage';
+import DetectObject from './components/DetectObject';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -9,8 +10,9 @@ export default function App() {
         <Router>
             <MyNavbar />
             <Routes>
-                <Route path="/" element={<Main title="Dog&Cat Detection" description="Detect Dogs and Cats on the image you have selected using AI" />} />
+                <Route path="/" element={<HomePage title="Dog&Cat Detection" description="Detect Dogs and Cats in the image using AI" />} />
                 <Route path="/how-it-works" element={<DescriptionPage />} />
+                <Route path="/detect-objects" element={<DetectObject />} />
             </Routes>
             <Footer />
         </Router>

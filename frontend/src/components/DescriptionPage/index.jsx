@@ -9,12 +9,12 @@ export default function DescriptionPage() {
     const navigate = useNavigate();
 
     const handleTryItNow = () => {
-        // Navigate to the root path="/" (the `Main` component) when the button is clicked
-        navigate('/');
+        // Navigate to the root path="/" (the `HomePage` page) when the button is clicked
+        navigate("/");
     };
 
     return (
-        <Container id="description-page" className="main">
+        <Container className="main">
             <Row className="justify-content-center">
                 <Col xxl={10} lg={9}>
                     <h1 className="app-title text-center mb-4">Welcome to <span className="green-color">Dog&Cat </span>Detection</h1>

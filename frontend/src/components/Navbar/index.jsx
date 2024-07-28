@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { emptyDetectedImageList } from '../../redux/slices/detectedImagesSlice';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,6 +15,8 @@ import './style.css';
 export default function MyNavbar() {
     const [expanded, setExpanded] = useState(false);
 
+    const dispatch = useDispatch();
+
     const handleToggle = () => {
         setExpanded(!expanded);
     };
@@ -21,19 +25,21 @@ export default function MyNavbar() {
         setExpanded(false);
     };
 
+    const handleReloadPage = () => {
+        dispatch(emptyDetectedImageList());
+    }
+
     return (
         <Navbar expand="lg" fixed="top" className="shadow bg-white" expanded={expanded}>
             <Container>
-                <Link to="/" className="navbar-brand d-flex align-items-center">
-                    <img
-                        alt="logo"
-                        src={Logo}
-                        width="50"
-                        height="50"
-                        className="d-inline-block align-top"
-                    />{' '}
-                    <span className="brand"><span className="green-color">Dog&Cat</span>Detection</span>
-                </Link>
+                <a
+                    href="/"
+                    className="navbar-brand d-flex align-items-center"
+                    onClick={handleReloadPage}
+                >
+                    <img alt="logo" src={Logo} width="50" height="50" className="d-inline-block align-top" draggable={false} />
+                    <div className="brand"><span className="green-color">Dog&Cat</span>Detection</div>
+                </a>
                 <Navbar.Toggle aria-controls="offcanvasNavbar" onClick={handleToggle} />
                 <Navbar.Offcanvas
                     id="offcanvasNavbar"
@@ -47,7 +53,8 @@ export default function MyNavbar() {
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <Nav className="justify-content-center flex-grow-1 menu-item">
+                        <Nav className="justify-content-center flex-grow-1 column-gap-4 menu-item">
+                            <Link to="/" className="nav-link" onClick={handleSelect}>Home</Link>
                             <Link to="/how-it-works" className="nav-link" onClick={handleSelect}>How it works</Link>
                             <NavDropdown title="Solutions" id="solutions-dropdown">
                                 <NavDropdown.Item href="/#solution/detect">Detection</NavDropdown.Item>

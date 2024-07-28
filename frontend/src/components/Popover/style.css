@@ -1,0 +1,21 @@
+.popover#popover-download-image-info {
+    max-width: 465px;
+}
+
+@media screen and (max-width: 426px) {
+    .popover#popover-download-image-info {
+        max-width: 415px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .popover#popover-download-image-info {
+        max-width: 360px;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .popover#popover-download-image-info {
+        max-width: 310px;
+    }
+}
