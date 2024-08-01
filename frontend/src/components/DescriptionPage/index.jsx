@@ -9,8 +9,7 @@ export default function DescriptionPage() {
     const navigate = useNavigate();
 
     const handleTryItNow = () => {
-        // Navigate to the root path="/" (the `HomePage` page) when the button is clicked
-        navigate("/");
+        navigate("/detect-objects");
     };
 
     return (
@@ -27,37 +26,23 @@ export default function DescriptionPage() {
 
                     <h2 className="mt-4">How It Works</h2>
                     <p className="app-description">
-                        Our <span className="green-color fw-bold">Dog&Cat </span>Detection web application leverages cutting-edge
-                        YOLOv8 technology to provide you with a seamless and powerful object
+                        Our <span className="green-color fw-bold">Dog&Cat </span>Detection web application leverages cutting-edge <a href="https://docs.ultralytics.com/models/yolov8/" className="green-color fst-italic" target="_blank">YOLOv8</a> technology to provide you with a seamless and powerful object
                         detection experience. Here's a step-by-step guide on how the magic
                         happens:
                     </p>
 
                     <ol className="app-description">
                         <li>
-                            <strong>Upload Your Image:</strong> Begin by uploading an image, and our application will attempt to detect and identify any dogs and cats present in the image. You can easily
-                            do this by clicking the 'Upload' button and selecting the image
-                            from your device.
+                            <strong>Upload Your Image:</strong> Start by uploading an image. You can either browse from your device, use ctrl+v to paste from the clipboard, or drag and drop an image into the app. If you don't have any images on hand! No problem! Choose one of our sample images to explore the power of our detecting object systems.
                         </li>
                         <li>
-                            <strong>Explore Sample Images:</strong> Don't have an image on
-                            hand? No problem! Explore our sample images to witness the power
-                            of object detection. Click on a sample image, and the application
-                            will showcase its ability to identify dogs and cats in various
-                            scenarios.
+                            <strong>AI Detection Process:</strong> Once your image is uploaded, our application will automatically send the image to our advanced AI model and start processing your image. It will analyze the image to detect and identify dogs and cats within seconds.
                         </li>
                         <li>
-                            <strong>Efficient Detection Process:</strong> After selecting your image, our application gears up to unveil the magic through the YOLOv8 model. But hold on, we've added a touch of suspense! The real show begins when you hit that 'Detect' button. Get ready for an exciting reveal as the detection process kicks in, showcasing the incredible capabilities of our technology.
+                            <strong>View Results:</strong> After successfully inferred, you can see the detected objects highlighted with bounding boxes and labels directly on the image. Also have detailed detection results such as category of the image, confidence score of detected objects.
                         </li>
                         <li>
-                            <strong>Visualize Results:</strong> The detected dogs and cats are
-                            then highlighted on the image, providing you with a visual
-                            representation of the detection results. Each bounding box
-                            represents the location of a detected object, making it easy for
-                            you to see the accuracy of the detection.
-                        </li>
-                        <li>
-                            <strong>Download Detected Images:</strong> Easily download the processed image with detected objects highlighted for your convenience.
+                            <strong>Download Detected Images:</strong> Save the detected images with bounding boxes and labels. The downloaded image file names follow the format: <span className="file-name-format text-nowrap fst-italic">{"{category}...{image_id}.png"}</span> where <span className="green-color fst-italic">{"{category}"}</span> can be <i>"ADog", "ACat", or "BothDog&Cat"</i>. This makes it easy to store and categorize the images into different folders based on the category.
                         </li>
                     </ol>
 
@@ -72,7 +57,7 @@ export default function DescriptionPage() {
                         Ready to see the magic? Click the button below to start detecting
                         dogs and cats in your images!
                     </p>
-                    <Button variant="primary" onClick={handleTryItNow}>Try It Now</Button>
+                    <Button className="upload-btn" onClick={handleTryItNow}>Try It Now</Button>
                 </Col>
             </Row>
         </Container>

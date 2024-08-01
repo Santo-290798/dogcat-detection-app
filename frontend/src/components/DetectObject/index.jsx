@@ -294,8 +294,8 @@ export default function DetectObject() {
                                                                         <p>The image downloaded including the <i>boxes</i> and <i>labels</i> similar to the image view.</p>
                                                                         <div>
                                                                             <div>File name of the image follows format:</div>
-                                                                            <div className="border p-2" id="file-name-format">
-                                                                                <span className="bg-light text-info">{"{category}"}_{"{num_dogs}"}dogs{"{num_cats}"}cats_{"{image_id}"}.png</span>
+                                                                            <div className="border p-2">
+                                                                                <span className="file-name-format fst-italic">{"{category}"}_{"{num_dogs}"}dogs{"{num_cats}"}cats_{"{image_id}"}.png</span>
                                                                             </div>
                                                                         </div>
                                                                     </>
@@ -304,7 +304,7 @@ export default function DetectObject() {
                                                                 <Button
                                                                     variant="outline-light"
                                                                     size="sm"
-                                                                    className="rounded-circle text-info fs-6 mb-1"
+                                                                    className="rounded-circle text-secondary fs-6 mb-1"
                                                                 >
                                                                     &#9432;
                                                                 </Button>

@@ -1,21 +1,26 @@
 .popover#popover-download-image-info {
-    max-width: 465px;
+    max-width: 455px;
+}
+
+.file-name-format {
+    background-color: #E5FFD0;
+    color: #8FAF3D;
 }
 
 @media screen and (max-width: 426px) {
     .popover#popover-download-image-info {
-        max-width: 415px;
+        max-width: 405px;
     }
 }
 
 @media screen and (max-width: 376px) {
     .popover#popover-download-image-info {
-        max-width: 360px;
+        max-width: 355px;
     }
 }
 
 @media screen and (max-width: 321px) {
     .popover#popover-download-image-info {
-        max-width: 310px;
+        max-width: 305px;
     }
 }

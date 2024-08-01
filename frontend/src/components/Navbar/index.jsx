@@ -57,16 +57,9 @@ export default function MyNavbar() {
                             <Link to="/" className="nav-link" onClick={handleSelect}>Home</Link>
                             <Link to="/how-it-works" className="nav-link" onClick={handleSelect}>How it works</Link>
                             <NavDropdown title="Solutions" id="solutions-dropdown">
-                                <NavDropdown.Item href="/#solution/detect">Detection</NavDropdown.Item>
-                                {/* <NavDropdown.Item href="#solution/segment">Segmentation</NavDropdown.Item>
-                                <NavDropdown.Item href="#solution/classify">Classification</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#solution/pose">Pose estimation</NavDropdown.Item> */}
-                            </NavDropdown>
-                            <NavDropdown title="Features" id="features-dropdown">
-                                <NavDropdown.Item href="/#feature/ai">Computer vision</NavDropdown.Item>
-                                {/* <NavDropdown.Item href="#feature/export">Export images</NavDropdown.Item> */}
-                                {/* <NavDropdown.Item href="#feature/auto-labeling">Auto labeling</NavDropdown.Item> */}
+                                <NavDropdown.Item href="/detect-objects">Object Detection</NavDropdown.Item>
+                                {/* <NavDropdown.Item href="/export">Export images</NavDropdown.Item>
+                                <NavDropdown.Item href="/auto-labeling">Auto labeling</NavDropdown.Item> */}
                             </NavDropdown>
                         </Nav>
                         <div>
