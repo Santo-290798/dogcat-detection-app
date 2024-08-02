@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,10 +5,8 @@ import Button from 'react-bootstrap/Button';
 import '../../css/main.css';
 
 export default function DescriptionPage() {
-    const navigate = useNavigate();
-
     const handleTryItNow = () => {
-        navigate("/detect-objects");
+        window.location.href = "/detect-objects";
     };
 
     return (
