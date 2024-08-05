@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from flask_cors import CORS
-from controllers.detection import detection_routes
+from routes.detection import detection_routes
 from config.allowed_origins import ALLOWED_ORIGINS
 from dotenv import load_dotenv
 
