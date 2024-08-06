@@ -1,6 +1,6 @@
 from flask import Blueprint, request
-from models.yolo import YOLOv8
-from models.json_response import JSONResponse
+from services.ultralytics.yolo import YOLOv8
+from helpers.json_response import JSONResponse
 
 from config import yolo_models_paths
 

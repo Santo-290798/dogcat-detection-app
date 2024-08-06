@@ -1,1 +1,1 @@
-DETECT = "../models/catdog_detection_yolov8s.pt"
+DETECT = "../services/ultralytics/models/catdog_detection_yolov8s.pt"
