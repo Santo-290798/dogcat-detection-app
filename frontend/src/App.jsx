@@ -1,20 +1,26 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MyNavbar from './components/Navbar';
-import HomePage from './components/HomePage';
-import DescriptionPage from './components/DescriptionPage';
-import DetectObject from './components/DetectObject';
-import Footer from './components/Footer';
+import { Routes, Route } from 'react-router-dom';
 
-export default function App() {
+import RootLayout from './_root/RootLayout';
+import { Home, HowItWorks, Missing, DetectObject } from './_root/pages';
+
+import './globals.css';
+
+const App = () => {
     return (
-        <Router>
-            <MyNavbar />
+        <main>
             <Routes>
-                <Route path="/" element={<HomePage title="Dog&Cat Detection" description="Detect Dogs and Cats in the image using AI" />} />
-                <Route path="/how-it-works" element={<DescriptionPage />} />
-                <Route path="/detect-objects" element={<DetectObject />} />
+                {/* root routes */}
+                <Route element={<RootLayout />}>
+                    <Route index element={<Home title="Dog&Cat Detection" description="Detect Dogs and Cats in the image using AI" />} />
+                    <Route path='/how-it-works' element={<HowItWorks />} />
+                    <Route path='/detect-objects' element={<DetectObject />} />
+
+                    {/* catch other missing routes */}
+                    <Route path='/*' element={<Missing />} />
+                </Route>
             </Routes>
-            <Footer />
-        </Router>
+        </main>
     );
 };
+
+export default App;

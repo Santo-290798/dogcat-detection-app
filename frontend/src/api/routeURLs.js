@@ -1,0 +1,1 @@
+export const DETECT_URL = '/api/detect';

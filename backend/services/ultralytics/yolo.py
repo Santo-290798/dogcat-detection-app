@@ -3,7 +3,7 @@ import io
 from PIL import Image
 from ultralytics import YOLO
 
-from config import inference_args
+from config.inference_args import IMG_SIZE, CONF, IOU
 from helpers.results_to_json import results_to_json
 
 
@@ -12,7 +12,7 @@ class YOLOv8:
         self.model = YOLO(model_path)
 
     def image_preprocess(self, img_base64):
-        if img_base64.find("base64") != -1:
+        if img_base64.find('base64') != -1:
             img_base64 = img_base64.split(',')[1]
 
         # decode the base64 string
@@ -26,7 +26,7 @@ class YOLOv8:
 
         return image
 
-    def predict(self, img_base64, size=inference_args.IMG_SIZE, confidence=inference_args.CONF, iou=inference_args.IOU):
+    def predict(self, img_base64, size=IMG_SIZE, confidence=CONF, iou=IOU):
         image = self.image_preprocess(img_base64)
 
         results = self.model.predict(image, imgsz=size, conf=confidence, iou=iou)

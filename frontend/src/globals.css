@@ -1,0 +1,611 @@
+/* GLOBAL STYLE SELECTORS */
+:root {
+    --highlight-color: #99cc00;
+    --highlight-color-lighter: #eaf4cc;
+    --highlight-color-bolder: #6b8e00;
+    --main-text-color: #666666;
+    --alert-max-width: 365px;
+    --alert-message-max-height: 72px;
+    --alert-padding-right: 30px;
+    --alert-padding-top: 22px;
+    --alert-animation-duration: 0.5s;
+}
+
+.highlight-color {
+    color: var(--highlight-color);
+}
+
+.app-title {
+    font-size: 72px;
+}
+
+.app-description {
+    font-size: 20px;
+    color: var(--main-text-color);
+}
+
+.upload-btn {
+    width: 50%;
+    height: 50px;
+    border: none !important;
+    background-image: linear-gradient(to right, var(--highlight-color) 0%, var(--highlight-color-bolder) 51%, var(--highlight-color) 100%);
+    background-size: 200% auto;
+}
+
+.upload-btn:hover {
+    background-position: right center;
+}
+
+.btn-close:disabled {
+    background-color: currentColor !important;
+}
+
+.btn-close:hover {
+    background-color: rgb(190, 190, 190) !important;
+}
+
+.btn-close:focus {
+    box-shadow: 0 0 0 0.25rem rgba(190, 190, 190, 0.25) !important;
+}
+
+body.drag-enter::before {
+    content: "Drop image anywhere";
+    position: fixed;
+    z-index: 1032;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cdcdcd;
+    font-size: 72px;
+    font-weight: 500;
+}
+
+body.drag-enter::after {
+    content: "1 file at a time";
+    position: fixed;
+    z-index: 1032;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cdcdcd;
+    font-size: 32px;
+}
+
+/* DetectObject page */
+.loading {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 97%;
+}
+
+.loading .spinner {
+    border: 5px solid #f7f7f7;
+    border-top: 5px solid var(--highlight-color-bolder);
+    width: 35px;
+    height: 35px;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.accordion .accordion-item {
+    color: var(--main-text-color);
+}
+
+.accordion .accordion-item .accordion-header .accordion-button {
+    pointer-events: none;
+    padding: 0.5rem 0.25rem;
+}
+
+.accordion .accordion-item .accordion-header .accordion-button::after {
+    display: none !important;
+}
+
+.accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+    background-color: unset;
+    box-shadow: none;
+}
+
+.collapse:not(.show) {
+    display: block !important;
+}
+
+.conf-score {
+    height: 168px;
+}
+
+.download-btn {
+    width: 100%;
+}
+
+.download-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Alert component */
+.wrap-alert {
+    z-index: 1031;
+    padding-top: 100px;
+    padding-right: var(--alert-padding-right);
+}
+
+.wrap-alert .alert {
+    position: relative;
+    max-width: var(--alert-max-width);
+    animation: alert-rtl var(--alert-animation-duration);
+    border-radius: 0;
+}
+
+.alert .alert-message {
+    max-height: var(--alert-message-max-height);
+}
+
+.alert-dismissible .btn-close {
+    padding: 17px 12px !important;
+}
+
+.alert-progress-bar {
+    height: 3px;
+}
+
+.alert-progress-bar-1s {
+    animation: alert-progress-bar 1s ease-in;
+}
+
+.alert-progress-bar-2s {
+    animation: alert-progress-bar 2s ease-in;
+}
+
+.alert-progress-bar-3s {
+    animation: alert-progress-bar 3s ease-in;
+}
+
+@keyframes alert-rtl {
+    from {
+        margin-right: calc(-1 * (var(--alert-max-width) + var(--alert-padding-top)));
+    }
+
+    to {
+        margin-right: 0;
+    }
+}
+
+@keyframes alert-ttb {
+    from {
+        margin-top: calc(-1 * (215px + var(--alert-message-max-height) + var(--alert-padding-top)));
+    }
+
+    to {
+        margin-top: 0;
+    }
+}
+
+@keyframes alert-progress-bar {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Canvas component */
+canvas.border-danger-subtle {
+    border-color: #dee2e6 !important;
+}
+
+/* Footer component */
+footer {
+    background-color: var(--highlight-color-lighter);
+}
+
+/* Navbar component */
+.login-btn {
+    visibility: hidden;
+    border: none !important;
+    background-image: linear-gradient(to right, var(--highlight-color) 0%, var(--highlight-color-bolder) 51%, var(--highlight-color) 100%);
+    background-size: 200% auto;
+}
+
+.login-btn:hover {
+    background-position: right center;
+}
+
+.menu-item {
+    padding-right: 150px;
+}
+
+.menu-item .nav-link:hover,
+.menu-item .nav-item .nav-link.show {
+    color: var(--highlight-color);
+}
+
+.menu-item .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-item .nav-item .nav-link.show::after {
+    border-top: 0;
+    border-bottom: .3em solid;
+}
+
+.menu-item a,
+.nav-item a {
+    -webkit-user-drag: none;
+}
+
+.nav-item .dropdown-menu .dropdown-item:focus,
+.nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: var(--highlight-color) !important;
+    color: white !important;
+}
+
+/* Popover component */
+.popover#popover-download-image-info {
+    max-width: 455px;
+}
+
+.file-name-format {
+    background-color: var(--highlight-color-lighter);
+    color: var(--highlight-color);
+}
+
+/* UploadImage component */
+.sampleImg:hover {
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* MEDIA SCREEN */
+@media screen and (max-width: 1024px) {
+
+    /* DetectObject page */
+    .loading {
+        width: 95%;
+    }
+
+    .conf-score {
+        height: auto;
+        min-height: 60px;
+        max-height: 132px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Global style selectors */
+    body.drag-enter::before {
+        font-size: 56px;
+    }
+
+    body.drag-enter::after {
+        font-size: 24px;
+    }
+
+    /* DetectObject page */
+    .loading {
+        width: 97%;
+    }
+
+    .conf-score {
+        min-height: 33px;
+    }
+
+    .accordion .accordion-item .accordion-header .accordion-button {
+        pointer-events: all;
+    }
+
+    .accordion .accordion-item .accordion-header .accordion-button::after {
+        display: inline-block !important;
+    }
+
+    .accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+        background-color: #cfe2ff;
+    }
+
+    .accordion .accordion-item .accordion-header .accordion-button:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    .collapse:not(.show) {
+        display: none !important;
+    }
+
+    .download-btn {
+        width: 40%;
+    }
+
+    /* Canvas component */
+    canvas {
+        border: 1px solid #dee2e6 !important;
+    }
+
+    canvas.border-danger-subtle {
+        border-color: #f1aeb5 !important;
+    }
+
+    /* Navbar component */
+    .menu-item {
+        padding-right: 0;
+    }
+
+    .menu-item .nav-link {
+        padding: 10px 0;
+        border-bottom: 1px solid #e9e9e9;
+    }
+}
+
+@media screen and (max-width: 426px) {
+
+    /* Global style selectors */
+    .app-title {
+        font-size: 60px;
+    }
+
+    .app-description {
+        font-size: 18px;
+    }
+
+    .app-description.fs-6 {
+        font-size: 14px !important;
+    }
+
+    body.drag-enter::before {
+        display: none;
+    }
+
+    body.drag-enter::after {
+        display: none;
+    }
+
+    .upload-btn.fs-5 {
+        font-size: 16px !important;
+    }
+
+    .upload-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .drop-paste-img {
+        display: none;
+    }
+
+    /* DetectObject page */
+    .detection-results {
+        font-size: 15px !important;
+    }
+
+    .accordion .accordion-header .accordion-button::after {
+        width: 15px !important;
+        height: 15px !important;
+        background-size: 15px !important;
+    }
+
+    .conf-score {
+        min-height: 30px;
+        max-height: 120px;
+    }
+
+    .download-btn {
+        width: 60%;
+    }
+
+    /* Alert component */
+    .wrap-alert {
+        padding-right: 0;
+    }
+
+    .wrap-alert .alert {
+        animation: none;
+        animation: alert-ttb var(--alert-animation-duration);
+    }
+
+    .alert .alert-message {
+        max-height: 61px;
+    }
+
+    .alert-heading.fs-6 {
+        font-size: 15px !important;
+    }
+
+    /* Footer component */
+    footer p {
+        font-size: 15px;
+    }
+
+    /* Popover component */
+    .popover#popover-download-image-info {
+        max-width: 405px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+
+    /* Global style selectors */
+    .app-title {
+        font-size: 56px;
+    }
+
+    .app-description {
+        font-size: 16px;
+    }
+
+    .app-description.fs-6 {
+        font-size: 12px !important;
+    }
+
+    .upload-btn.fs-5 {
+        font-size: 14px !important;
+    }
+
+    .upload-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* DetectObject page */
+    .detection-results {
+        font-size: 13px !important;
+    }
+
+    .accordion .accordion-header .accordion-button::after {
+        width: 13px !important;
+        height: 13px !important;
+        background-size: 13px !important;
+    }
+
+    .loading .spinner {
+        border-width: 4px;
+        border-top-width: 4px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .conf-score {
+        min-height: 27px;
+        max-height: 110px;
+    }
+
+    .download-btn {
+        font-size: 14px !important;
+    }
+
+    .download-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Alert component */
+    .wrap-alert .alert {
+        max-width: 320px;
+    }
+
+    .alert .alert-message {
+        max-height: 59px;
+    }
+
+    .alert-heading.fs-6 {
+        font-size: 13px !important;
+    }
+
+    /* Footer component */
+    footer p {
+        font-size: 13px;
+    }
+
+    /* Popover component */
+    .popover#popover-download-image-info {
+        max-width: 355px;
+    }
+}
+
+@media screen and (max-width: 321px) {
+
+    /* Global style selectors */
+    .app-title {
+        font-size: 52px;
+    }
+
+    .app-description {
+        font-size: 14px;
+    }
+
+    .app-description.fs-6 {
+        font-size: 10px !important;
+    }
+
+    .upload-btn {
+        width: 55%;
+        height: 40px;
+    }
+
+    .upload-btn.fs-5 {
+        font-size: 12px !important;
+    }
+
+    .upload-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* DetectObject page */
+    .detection-results {
+        font-size: 11px !important;
+    }
+
+    .accordion .accordion-header .accordion-button::after {
+        width: 11px !important;
+        height: 11px !important;
+        background-size: 11px !important;
+    }
+
+    .conf-score {
+        min-height: 24px;
+        max-height: 96px;
+    }
+
+    .download-btn {
+        font-size: 12px !important;
+    }
+
+    .download-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Alert component */
+    .wrap-alert .alert {
+        max-width: 270px;
+    }
+
+    .alert .alert-message {
+        max-height: 44px;
+    }
+
+    .alert-heading.fs-6 {
+        font-size: 11px !important;
+    }
+
+    /* Footer component */
+    footer p {
+        font-size: 11px;
+    }
+
+    /* Popover component */
+    .popover#popover-download-image-info {
+        max-width: 305px;
+    }
+}
+
+@media screen and (min-width: 1537px) {
+
+    /* Global style selectors */
+    .app-title {
+        font-size: 80px;
+    }
+
+    .app-description {
+        font-size: 24px;
+    }
+}
