@@ -3,7 +3,8 @@
     --highlight-color: #99cc00;
     --highlight-color-lighter: #eaf4cc;
     --highlight-color-bolder: #6b8e00;
-    --main-text-color: #666666;
+    --main-text-color: rgba(0, 0, 0, 0.65);
+    --main-text-color-bolder: rgba(0, 0, 0, 0.8);
     --alert-max-width: 365px;
     --alert-message-max-height: 72px;
     --alert-padding-right: 30px;
@@ -22,6 +23,10 @@
 .app-description {
     font-size: 20px;
     color: var(--main-text-color);
+}
+
+.main-text-hover:hover {
+    color: var(--main-text-color-bolder);
 }
 
 .upload-btn {
@@ -233,9 +238,18 @@ footer {
     padding-right: 150px;
 }
 
+.menu-item .nav-link,
+.menu-item .dropdown-item {
+    color: var(--main-text-color);
+}
+
 .menu-item .nav-link:hover,
 .menu-item .nav-item .nav-link.show {
     color: var(--highlight-color);
+}
+
+.menu-item .nav-link:focus {
+    color: var(--main-text-color-bolder);
 }
 
 .menu-item .nav-item .nav-link {
@@ -429,6 +443,12 @@ footer {
         font-size: 15px !important;
     }
 
+    /* Missing page */
+    .left-arrow-icon {
+        width: 20px;
+        height: 20px;
+    }
+
     /* Footer component */
     footer p {
         font-size: 15px;
@@ -494,6 +514,12 @@ footer {
     .download-icon {
         width: 14px;
         height: 14px;
+    }
+
+    /* Missing page */
+    .left-arrow-icon {
+        width: 16px;
+        height: 16px;
     }
 
     /* Alert component */
@@ -570,6 +596,12 @@ footer {
     }
 
     .download-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Missing page */
+    .left-arrow-icon {
         width: 12px;
         height: 12px;
     }
