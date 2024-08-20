@@ -6,7 +6,7 @@ const HowItWorks = () => {
     };
 
     return (
-        <Container style={{ 'marginTop': '100px' }}>
+        <Container style={{ marginTop: '100px' }}>
             <Row className='justify-content-center'>
                 <Col xxl={10} lg={9}>
                     <h1 className='app-title text-center mb-4'>Welcome to <span className='highlight-color'>Dog&Cat </span>Detection</h1>
@@ -50,7 +50,7 @@ const HowItWorks = () => {
                         Ready to see the magic? Click the button below to start detecting
                         dogs and cats in your images!
                     </p>
-                    <Button className='upload-btn fs-5 fs-6 w-auto' style={{ 'height': '40px' }} onClick={handleTryItNow}>Try It Now</Button>
+                    <Button className='upload-btn fs-5 fs-6 w-auto' style={{ height: '40px' }} onClick={handleTryItNow}>Try It Now</Button>
                 </Col>
             </Row>
         </Container>

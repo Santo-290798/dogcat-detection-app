@@ -3,8 +3,8 @@
     --highlight-color: #99cc00;
     --highlight-color-lighter: #eaf4cc;
     --highlight-color-bolder: #6b8e00;
-    --main-text-color: rgba(0, 0, 0, 0.65);
-    --main-text-color-bolder: rgba(0, 0, 0, 0.8);
+    --main-text-color: rgba(0, 0, 0, 0.75);
+    --main-text-color-bolder: rgba(0, 0, 0, 0.9);
     --alert-max-width: 365px;
     --alert-message-max-height: 72px;
     --alert-padding-right: 30px;
@@ -92,7 +92,7 @@ body.drag-enter::after {
 }
 
 .loading .spinner {
-    border: 5px solid #f7f7f7;
+    border: 5px solid #ffffff;
     border-top: 5px solid var(--highlight-color-bolder);
     width: 35px;
     height: 35px;
@@ -107,6 +107,10 @@ body.drag-enter::after {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.detection-results {
+    color: var(--main-text-color);
 }
 
 .accordion .accordion-item {
@@ -142,6 +146,10 @@ body.drag-enter::after {
 .download-icon {
     width: 16px;
     height: 16px;
+}
+
+.info-icon {
+    color: var(--main-text-color) !important;
 }
 
 /* Alert component */
@@ -277,6 +285,11 @@ footer {
 /* Popover component */
 .popover#popover-download-image-info {
     max-width: 455px;
+}
+
+.popover .popover-header,
+.popover .popover-body {
+    color: var(--main-text-color);
 }
 
 .file-name-format {

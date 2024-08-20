@@ -157,7 +157,7 @@ const UploadImage = () => {
                                         Upload Image
                                     </Button>
                                     <div className='drop-paste-img mt-2'>
-                                        <p className='fs-6'>
+                                        <p className='app-description fs-6'>
                                             or drop a file,<br />
                                             ctrl+V to paste image
                                         </p>
@@ -168,7 +168,7 @@ const UploadImage = () => {
                     </Row>
                     <Row className='justify-content-center my-4'>
                         <Col xs={8} md={6} xxl={6} className='text-center'>
-                            <p className='app-description fs-6 mb-2'>No picture? Try with one of these</p>
+                            <p className='app-description text-black-50 fs-6 mb-2'>No picture? Try with one of these</p>
                             <Row>
                                 {Array.from({ length: 4 }, (_, i) => `/assets/images/sample_img${i + 1}.jpg`).map((img_path, index) => (
                                     <Col xs={3} className='px-1' key={index}>

@@ -198,7 +198,7 @@ const DetectObject = () => {
                                         Upload Image
                                     </Button>
                                     <div className='drop-paste-img mt-2'>
-                                        <p className='fs-6'>
+                                        <p className='app-description fs-6'>
                                             or drop a file, ctrl+V to paste image
                                         </p>
                                     </div>
@@ -239,14 +239,14 @@ const DetectObject = () => {
                                 <Col xs={12} lg={4} xxl={3}>
                                     <Accordion.Item eventKey={index} className='app-description fs-6'>
                                         <Accordion.Header className='border-bottom pb-2'>
-                                            <div className='detection-results text-secondary fw-bold'>Detection Results</div>
+                                            <div className='detection-results fw-bold'>Detection Results</div>
                                         </Accordion.Header>
                                         {image.detectedResults ? (
                                             <>
                                                 <Accordion.Body className='my-2 p-1'>
                                                     <div>
                                                         Category: <br />
-                                                        <span className='detection-results'>{getDetectionCategory(image.detectedResults)}</span>
+                                                        {getDetectionCategory(image.detectedResults)}
                                                     </div>
                                                     {image.detectedResults.length > 0 && (
                                                         <div className='mt-2 mb-4'>
@@ -301,7 +301,7 @@ const DetectObject = () => {
                                                                 <Button
                                                                     variant='outline-light'
                                                                     size='sm'
-                                                                    className='rounded-circle text-secondary fs-6 mb-1'
+                                                                    className='info-icon rounded-circle fs-6 mb-1'
                                                                 >
                                                                     &#9432;
                                                                 </Button>
